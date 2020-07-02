@@ -1,0 +1,59 @@
+Sistem Internal Memo (IOM) On Line
+-----------------------------------------------------------------------------
+
+
+
+table user
+-----------------------------------------------------------------------------
+tbuser
+kduser char(10)
+nmuser char(50)
+nmdept char(50)
+stsappr char(1) -- status approval , kalau 0 : tidak punya hak melakukan approve
+                                           1 : punya hak utk approve ke-1
+                                           2 : punya hak utk approve ke-2
+
+
+
+table item memo
+-----------------------------------------------------------------------------
+tbitem
+kditem char(10)
+nmitem char(50)
+
+
+
+
+table iom  IOM = Internal Memo
+-----------------------------------------------------------------------------
+noiom  char(13) format : 2020/IOM/0001
+tgliom date
+kduser char(10)
+ket    char(100)
+
+
+
+table iomdet  (detail IOM)
+-----------------------------------------------------------------------------
+noiom char(13)
+kditem char(10)
+stsiom char(1)  --> 0 : IOM belum diselesaikan
+                    1 : IOM sudah diselesaikan   
+tglselesai date
+
+
+
+rincian program
+-----------------------------------------------------------------------------
+Menu dalam program :
+Master : User
+         Item
+
+IOM    : Daftar IOM
+         IOM Baru
+    
+Log Out
+
+setelah login muncul menu2 di atas,
+
+kolom approve di daftar memo hanya muncul untuk user yg punya hak approve (field stsappr isinya 1 atau 2)
