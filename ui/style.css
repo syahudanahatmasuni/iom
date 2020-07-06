@@ -1,0 +1,72 @@
+/*MAIN STYLE*/
+body{
+    font-family: "Calibri";
+    margin:0;
+    height:100%;
+    background-image: url("assets/image/bg.jpg");
+}
+.main{
+    width:60%;
+    margin:0 auto;
+}
+.header{
+    padding:0;
+    color: white;
+}
+.header img{
+    width:100%;
+}
+.menubar{
+    background-color: #dfffd7;
+    padding: 0;
+}
+.menubar table{
+    width: 100%;
+    background-color: #dfffd7;
+    border-spacing: 0;
+    -webkit-box-shadow: none;
+}
+.menubar table tr td{
+    border-right: 1px solid black;
+    font-weight: bold;
+    text-align: center;
+    min-width:100px;
+    font-size:14pt;
+}
+.content{
+    background-color:#f0f0f0;
+    min-height: 600px;
+    height:600px;
+    vertical-align: top;
+}
+.footer{
+    color:white;
+    text-align: center;
+    padding:0px;
+}
+.frame{
+    width:100%;
+    border-spacing: 15px;
+    background-color: #39739b;
+    -webkit-box-shadow: 0px 0px 32px -2px rgba(0,0,0,0.75);
+}
+td{
+    padding: 10px;
+}
+
+/*INTERNAL COMPONENT*/
+
+.login{
+    margin: 0 auto;
+    border-spacing: 0;
+    font-size: 14pt;
+    width: 300px;
+}
+.login tr td{
+    border: 1px solid black;
+    padding:5px;
+}
+.login input{
+    font-size: 14pt;
+    background-color: none;
+}
