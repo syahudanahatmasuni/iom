@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2020 at 03:31 AM
+-- Generation Time: Jul 06, 2020 at 03:52 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -32,6 +32,21 @@ CREATE TABLE `tbiom` (
   `kduser` char(10) NOT NULL,
   `ket` char(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbiom`
+--
+
+INSERT INTO `tbiom` (`noiom`, `tgliom`, `kduser`, `ket`) VALUES
+('2020/IOM/1', '2020-07-06', 'USR1000', 'INIT_IOM');
+
+--
+-- Triggers `tbiom`
+--
+DELIMITER $$
+CREATE TRIGGER `nodiom_new` BEFORE INSERT ON `tbiom` FOR EACH ROW SET NEW.noiom = CONCAT(DATE_FORMAT(NOW(), "%Y"),"/IOM/",(SELECT SUBSTRING(MAX(noiom),10,13) + 1 from tbiom))
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
